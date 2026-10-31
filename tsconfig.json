@@ -1,0 +1,17 @@
+{
+  // Site: compila src/*.ts para js/*.js (scripts comuns, sem módulos, para o
+  // index.html funcionar abrindo direto pelo arquivo)
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ES2020",
+    "moduleDetection": "legacy",
+    "rootDir": "src",
+    "outDir": "js",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "types": []
+  },
+  "include": ["src"]
+}

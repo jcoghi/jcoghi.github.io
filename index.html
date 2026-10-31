@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banco de Cartas Pokémon</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Banco de Cartas Pokémon</h1>
+  </header>
+  <p id="status" class="status" role="status"></p>
+
+  <div class="layout">
+    <main>
+      <section class="filtros">
+        <input type="search" id="busca" placeholder="Buscar por nome ou código (ex.: raikou, dlr-033)…" autocomplete="off" aria-label="Buscar carta">
+        <select id="filtro-tipo" aria-label="Tipo">
+          <option value="">Regular e Foil</option>
+          <option value="Regular">Só Regular</option>
+          <option value="Foil">Só Foil</option>
+        </select>
+        <label><input type="checkbox" id="filtro-preco"> Só com preço</label>
+        <label><input type="checkbox" id="filtro-pedido"> Só no pedido</label>
+      </section>
+      <p class="dica">Dica: digite e tecle <kbd>Enter</kbd> para ir à quantidade da 1ª carta; <kbd>Enter</kbd> de novo volta para a busca.</p>
+      <p id="contagem" class="contagem"></p>
+      <div id="resultados" class="lista"></div>
+      <button type="button" id="mostrar-mais" class="mostrar-mais" hidden>Mostrar mais</button>
+    </main>
+
+    <aside class="pedido">
+      <h2>Pedido</h2>
+      <p id="pedido-itens" class="pedido-itens"></p>
+      <ul id="pedido-lista" class="pedido-lista"></ul>
+      <p id="pedido-aviso" class="pedido-aviso" hidden></p>
+      <div class="pedido-total">
+        <span>Total a cobrar</span>
+        <strong id="pedido-total">R$ 0,00</strong>
+      </div>
+      <button type="button" id="btn-zerar" class="perigo">Zerar quantidades</button>
+    </aside>
+  </div>
+
+  <script src="dados/cartas.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

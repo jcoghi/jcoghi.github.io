@@ -1,0 +1,15 @@
+{
+  "name": "banco-cartas-pokemon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "check": "tsc --noEmit && tsc -p scripts",
+    "importar": "node scripts/importar-liga.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+# Páginas/JSON salvos da Liga (usados só pelo importador)
+dados/*.html
+dados/*.json
