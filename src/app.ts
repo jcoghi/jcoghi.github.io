@@ -8,8 +8,9 @@ interface Carta {
   nomePT: string;
   nomeEN: string;
   tipo: TipoCarta;
+  raridade: string;
   preco: number | null;
-  busca: string; // nomes, número e código normalizados, para a busca
+  busca: string; // nomes, número, código e raridade normalizados, para a busca
 }
 
 const estado = {
@@ -88,14 +89,16 @@ function prepararCarta(carta: CartaBanco): Carta {
     nomePT: carta.nomePT,
     nomeEN: carta.nomeEN,
     tipo: carta.tipo,
+    raridade: carta.raridade || '',
     preco,
-    busca: normalizar(`${carta.nomePT} ${carta.nomeEN} ${carta.numero} ${carta.codigo}`),
+    busca: normalizar(`${carta.nomePT} ${carta.nomeEN} ${carta.numero} ${carta.codigo} ${carta.raridade || ''}`),
   };
 }
 
-// Nome em inglês só aparece quando é diferente do português
+// Linha abaixo do nome: nome em inglês (quando diferente do português) e raridade
 function nomeSecundario(c: Carta): string {
-  return c.nomeEN && c.nomeEN !== c.nomePT ? c.nomeEN : '';
+  const ingles = c.nomeEN && c.nomeEN !== c.nomePT ? c.nomeEN : '';
+  return [ingles, c.raridade].filter(Boolean).join(' · ');
 }
 
 // ---------- persistência ----------
@@ -206,7 +209,7 @@ function renderizarPedido(): void {
     total += subtotal;
     return `
       <li data-id="${escapar(c.id)}">
-        <div class="item-nome">${escapar(c.nomePT)} <small>Nº ${escapar(c.numero)} · ${c.tipo}</small></div>
+        <div class="item-nome">${escapar(c.nomePT)} <small>Nº ${escapar(c.numero)} · ${c.raridade ? escapar(c.raridade) : c.tipo}</small></div>
         <div class="item-valores">
           ${r.qtd} × ${c.preco == null ? '<span class="falta">sem preço</span>' : moeda.format(c.preco)}
           <strong>${moeda.format(subtotal)}</strong>

@@ -10,6 +10,7 @@ interface CartaBanco {
   nomePT: string;
   nomeEN: string;
   tipo: TipoCarta;
+  raridade?: string; // ex.: "Rara Dupla", "Ilustração Rara" (quando informada)
   // 12.5 ou "12,50"; null = sem preço
   preco: number | string | null;
 }

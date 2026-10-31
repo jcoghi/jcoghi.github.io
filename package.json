@@ -6,7 +6,8 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "check": "tsc --noEmit && tsc -p scripts",
-    "importar": "node scripts/importar-liga.ts"
+    "importar": "node scripts/importar-liga.ts",
+    "importar-tabela": "node scripts/importar-tabela.ts"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
