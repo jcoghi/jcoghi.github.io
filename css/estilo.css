@@ -93,7 +93,7 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
 }
 .carta.no-pedido { border-color: var(--ok); box-shadow: 0 0 0 2px rgba(31, 138, 76, .15); }
 
-.codigo { color: var(--suave); font-size: 12px; }
+.numero { color: var(--suave); font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .nomes { display: flex; flex-direction: column; min-width: 0; }
 .nomes strong, .nomes small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nomes small { color: var(--suave); font-size: 12px; }
@@ -145,6 +145,6 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
   .pedido { position: static; max-height: none; order: -1; }
   .pedido-lista { max-height: 220px; }
   .carta { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; }
-  .carta .codigo { grid-column: 1 / -1; }
+  .carta .numero { grid-column: 1 / -1; }
   .carta .preco { text-align: left; }
 }

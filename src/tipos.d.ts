@@ -5,6 +5,7 @@ type TipoCarta = 'Regular' | 'Foil';
 // Carta como fica gravada em dados/cartas.js (uma entrada por versão: Regular ou Foil)
 interface CartaBanco {
   id: string;      // ex.: "dlr-090-reg" / "dlr-090-foil"
+  numero: string;  // número da carta na coleção, ex.: "090"
   codigo: string;  // ex.: "dlr-090" (igual nas duas versões)
   nomePT: string;
   nomeEN: string;

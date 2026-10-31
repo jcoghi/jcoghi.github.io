@@ -3,12 +3,13 @@ const POR_PAGINA = 100;
 // Carta pronta para uso no site
 interface Carta {
   id: string;
+  numero: string;
   codigo: string;
   nomePT: string;
   nomeEN: string;
   tipo: TipoCarta;
   preco: number | null;
-  busca: string; // nomes + código normalizados, para a busca
+  busca: string; // nomes, número e código normalizados, para a busca
 }
 
 const estado = {
@@ -82,12 +83,13 @@ function prepararCarta(carta: CartaBanco): Carta {
   }
   return {
     id: carta.id,
+    numero: carta.numero,
     codigo: carta.codigo,
     nomePT: carta.nomePT,
     nomeEN: carta.nomeEN,
     tipo: carta.tipo,
     preco,
-    busca: normalizar(`${carta.nomePT} ${carta.nomeEN} ${carta.codigo}`),
+    busca: normalizar(`${carta.nomePT} ${carta.nomeEN} ${carta.numero} ${carta.codigo}`),
   };
 }
 
@@ -117,7 +119,7 @@ async function carregarDoBanco(): Promise<void> {
     throw new Error('arquivo dados/cartas.js não encontrado, com erro de digitação ou no formato antigo. Rode: npm run importar');
   }
   estado.cartas = banco.cartas.map(prepararCarta).sort((a, b) =>
-    ordemCodigo.compare(a.codigo, b.codigo) || (a.tipo === 'Regular' ? -1 : 1));
+    ordemCodigo.compare(a.numero, b.numero) || (a.tipo === 'Regular' ? -1 : 1));
   estado.porId = new Map(estado.cartas.map((c) => [c.id, c]));
 
   // Quantidades de cartas que não existem mais no banco são descartadas
@@ -159,7 +161,7 @@ function htmlCarta(c: Carta): string {
   const secundario = nomeSecundario(c);
   return `
     <article class="carta${r.qtd ? ' no-pedido' : ''}" data-id="${escapar(c.id)}">
-      <code class="codigo">${escapar(c.codigo)}</code>
+      <span class="numero" title="${escapar(c.codigo)}">Nº ${escapar(c.numero)}</span>
       <div class="nomes">
         <strong>${escapar(c.nomePT)}</strong>
         ${secundario ? `<small>${escapar(secundario)}</small>` : ''}
@@ -192,7 +194,7 @@ function renderizarPedido(): void {
     const c = estado.porId.get(r.chave);
     if (r.qtd && c) itens.push({ r, c });
   }
-  itens.sort((a, b) => ordemNome.compare(a.c.nomePT, b.c.nomePT) || ordemCodigo.compare(a.c.id, b.c.id));
+  itens.sort((a, b) => ordemCodigo.compare(a.c.numero, b.c.numero) || (a.c.tipo === 'Regular' ? -1 : 1));
 
   let total = 0;
   let semPreco = 0;
@@ -204,7 +206,7 @@ function renderizarPedido(): void {
     total += subtotal;
     return `
       <li data-id="${escapar(c.id)}">
-        <div class="item-nome">${escapar(c.nomePT)} <small>${c.tipo} · ${escapar(c.codigo)}</small></div>
+        <div class="item-nome">${escapar(c.nomePT)} <small>Nº ${escapar(c.numero)} · ${c.tipo}</small></div>
         <div class="item-valores">
           ${r.qtd} × ${c.preco == null ? '<span class="falta">sem preço</span>' : moeda.format(c.preco)}
           <strong>${moeda.format(subtotal)}</strong>

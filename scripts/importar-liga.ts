@@ -8,6 +8,7 @@
 // (A Liga bloqueia GET feito por script, por isso a página precisa ser salva pelo navegador.)
 //
 // Cada carta da Liga vira duas entradas (Regular e Foil), exceto raridades que só existem em Foil.
+// As duas versões usam o menor preço da Liga (precoMenor).
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -15,6 +16,7 @@ type TipoCarta = 'Regular' | 'Foil';
 
 interface CartaBanco {
   id: string;
+  numero: string;
   codigo: string;
   nomePT: string;
   nomeEN: string;
@@ -84,19 +86,21 @@ function lerCardsjson(caminho: string): CartaLiga[] {
 
 // Transforma os itens da Liga em entradas separadas (Regular e Foil)
 function formatar(c: CartaLiga): CartaBanco[] {
-  const baseId = `${prefixo}-${String(c.sN).padStart(3, '0')}`;
+  const numero = String(c.sN).padStart(3, '0');
+  const baseId = `${prefixo}-${numero}`;
   const nomeEN = c.nEN ? c.nEN.replace(/\s*\(#.*\)/, '').trim() : '';
   const nomePT = c.nPT && c.nPT.trim() !== '' ? c.nPT.trim() : nomeEN;
   const entrada = (sufixo: string, tipo: TipoCarta, preco: number | null): CartaBanco =>
-    ({ id: `${baseId}-${sufixo}`, codigo: baseId, nomePT, nomeEN, tipo, preco });
+    ({ id: `${baseId}-${sufixo}`, numero, codigo: baseId, nomePT, nomeEN, tipo, preco });
 
   if (RARIDADES_SO_FOIL.includes(Number(c.iR))) {
     return [entrada('foil', 'Foil', lerPreco(c.precoMenor))];
   }
-  // Cartas comuns, incomuns e raras regulares geram 2 registros
+  // Cartas comuns, incomuns e raras regulares geram 2 registros, ambos com o menor preço
+  const menor = lerPreco(c.precoMenor);
   return [
-    entrada('reg', 'Regular', lerPreco(c.precoMenor) ?? 0.15),
-    entrada('foil', 'Foil', lerPreco(c.precoMaior) ?? 0.25),
+    entrada('reg', 'Regular', menor ?? 0.15),
+    entrada('foil', 'Foil', menor ?? 0.25),
   ];
 }
 
@@ -127,7 +131,7 @@ try {
     if (ids.has(c.id)) throw new Error(`id repetido: ${c.id}; banco atual mantido`);
     ids.add(c.id);
   }
-  cartas.sort((a, b) => a.codigo.localeCompare(b.codigo) || (a.tipo === 'Regular' ? -1 : 1));
+  cartas.sort((a, b) => a.numero.localeCompare(b.numero, 'pt-BR', { numeric: true }) || (a.tipo === 'Regular' ? -1 : 1));
 
   fs.writeFileSync(ARQUIVO_BANCO, gerarArquivo({ atualizadoEm: new Date().toISOString(), colecao: prefixo, cartas }));
   const semPreco = cartas.filter((c) => c.preco == null).length;
