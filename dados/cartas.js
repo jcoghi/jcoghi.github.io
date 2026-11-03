@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:40:47.816Z",
+  "atualizadoEm": "2026-11-03T16:40:50.691Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -156,7 +156,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-079-reg","numero":"079","codigo":"dlr-079","nomePT":"Delibird","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-079-rev","numero":"079","codigo":"dlr-079","nomePT":"Delibird","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-080-reg","numero":"080","codigo":"dlr-080","nomePT":"Azurill","nomeEN":"","tipo":"Regular","preco":0.2},
-    {"id":"dlr-080-rev","numero":"080","codigo":"dlr-080","nomePT":"Azurill","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
+    {"id":"dlr-080-rev","numero":"080","codigo":"dlr-080","nomePT":"Azurill","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-081-reg","numero":"081","codigo":"dlr-081","nomePT":"Swablu","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-081-rev","numero":"081","codigo":"dlr-081","nomePT":"Swablu","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-082-rev","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Reverse Foil","preco":0.3},
