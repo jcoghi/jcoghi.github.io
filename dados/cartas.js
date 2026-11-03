@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:48:19.739Z",
+  "atualizadoEm": "2026-11-03T16:48:28.308Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -178,7 +178,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-091-reg","numero":"091","codigo":"dlr-091","nomePT":"Colete Customizado","nomeEN":"","tipo":"Regular","preco":2},
     {"id":"dlr-091-rev","numero":"091","codigo":"dlr-091","nomePT":"Colete Customizado","nomeEN":"","tipo":"Reverse Foil","preco":0},
     {"id":"dlr-092-reg","numero":"092","codigo":"dlr-092","nomePT":"Hype da Emcee","nomeEN":"","tipo":"Regular","preco":2},
-    {"id":"dlr-092-rev","numero":"092","codigo":"dlr-092","nomePT":"Hype da Emcee","nomeEN":"","tipo":"Reverse Foil","preco":0.14},
+    {"id":"dlr-092-rev","numero":"092","codigo":"dlr-092","nomePT":"Hype da Emcee","nomeEN":"","tipo":"Reverse Foil","preco":0},
     {"id":"dlr-093-reg","numero":"093","codigo":"dlr-093","nomePT":"Grisham","nomeEN":"","tipo":"Regular","preco":0.29},
     {"id":"dlr-093-rev","numero":"093","codigo":"dlr-093","nomePT":"Grisham","nomeEN":"","tipo":"Reverse Foil","preco":0.29},
     {"id":"dlr-094-reg","numero":"094","codigo":"dlr-094","nomePT":"Tubo de Lava Lendário (Esquerda)","nomeEN":"Legendary Pyroduct (Left Half)","tipo":"Regular","preco":0.49},
