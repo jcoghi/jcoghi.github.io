@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:16:52.246Z",
+  "atualizadoEm": "2026-11-03T16:17:19.523Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -17,7 +17,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-005-foil","numero":"005","codigo":"dlr-005","nomePT":"Cacturne","nomeEN":"","tipo":"Foil","preco":0.5},
     {"id":"dlr-006-reg","numero":"006","codigo":"dlr-006","nomePT":"Combee","nomeEN":"","tipo":"Regular","preco":0.3},
     {"id":"dlr-006-rev","numero":"006","codigo":"dlr-006","nomePT":"Combee","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-007-reg","numero":"007","codigo":"dlr-007","nomePT":"Vespiquen","nomeEN":"","tipo":"Regular","preco":0.2},
+    {"id":"dlr-007-reg","numero":"007","codigo":"dlr-007","nomePT":"Vespiquen","nomeEN":"","tipo":"Regular","preco":0.3},
     {"id":"dlr-007-rev","numero":"007","codigo":"dlr-007","nomePT":"Vespiquen","nomeEN":"","tipo":"Reverse Foil","preco":0.7},
     {"id":"dlr-008-reg","numero":"008","codigo":"dlr-008","nomePT":"Shaymin","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-008-rev","numero":"008","codigo":"dlr-008","nomePT":"Shaymin","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
