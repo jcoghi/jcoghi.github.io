@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:40:32.321Z",
+  "atualizadoEm": "2026-11-03T16:40:34.804Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -148,7 +148,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-075-rev","numero":"075","codigo":"dlr-075","nomePT":"Kommo-o","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-075-foil","numero":"075","codigo":"dlr-075","nomePT":"Kommo-o","nomeEN":"","tipo":"Foil","preco":0.5},
     {"id":"dlr-076-reg","numero":"076","codigo":"dlr-076","nomePT":"Cyclizar","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-076-rev","numero":"076","codigo":"dlr-076","nomePT":"Cyclizar","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
+    {"id":"dlr-076-rev","numero":"076","codigo":"dlr-076","nomePT":"Cyclizar","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-077-reg","numero":"077","codigo":"dlr-077","nomePT":"Tauros","nomeEN":"","tipo":"Regular","preco":0.1},
     {"id":"dlr-077-rev","numero":"077","codigo":"dlr-077","nomePT":"Tauros","nomeEN":"","tipo":"Reverse Foil","preco":0.1},
     {"id":"dlr-078-reg","numero":"078","codigo":"dlr-078","nomePT":"Eevee","nomeEN":"","tipo":"Regular","preco":0.1},
