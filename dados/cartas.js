@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:41:52.907Z",
+  "atualizadoEm": "2026-11-03T16:41:57.042Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -169,7 +169,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-086-reg","numero":"086","codigo":"dlr-086","nomePT":"Fletchling","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-086-rev","numero":"086","codigo":"dlr-086","nomePT":"Fletchling","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-087-reg","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-087-rev","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
+    {"id":"dlr-087-rev","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-088-foil","numero":"088","codigo":"dlr-088","nomePT":"Talonflame ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":40},
     {"id":"dlr-089-reg","numero":"089","codigo":"dlr-089","nomePT":"Arão","nomeEN":"","tipo":"Regular","preco":0.49},
     {"id":"dlr-089-rev","numero":"089","codigo":"dlr-089","nomePT":"Arão","nomeEN":"","tipo":"Reverse Foil","preco":0.49},
