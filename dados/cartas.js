@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:13:50.723Z",
+  "atualizadoEm": "2026-11-03T16:14:07.600Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -37,7 +37,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-016-rev","numero":"016","codigo":"dlr-016","nomePT":"Dolliv","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-017-reg","numero":"017","codigo":"dlr-017","nomePT":"Arboliva","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-017-rev","numero":"017","codigo":"dlr-017","nomePT":"Arboliva","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
-    {"id":"dlr-018-reg","numero":"018","codigo":"dlr-018","nomePT":"Growlithe","nomeEN":"","tipo":"Regular","preco":0.2},
+    {"id":"dlr-018-reg","numero":"018","codigo":"dlr-018","nomePT":"Growlithe","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-018-rev","numero":"018","codigo":"dlr-018","nomePT":"Growlithe","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-019-rev","numero":"019","codigo":"dlr-019","nomePT":"Arcanine","nomeEN":"","tipo":"Reverse Foil","preco":0.35},
     {"id":"dlr-019-foil","numero":"019","codigo":"dlr-019","nomePT":"Arcanine","nomeEN":"","tipo":"Foil","preco":0.35},
