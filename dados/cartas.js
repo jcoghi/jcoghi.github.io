@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:38:09.507Z",
+  "atualizadoEm": "2026-11-03T16:38:12.490Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -128,7 +128,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-064-reg","numero":"064","codigo":"dlr-064","nomePT":"Purrloin","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-064-rev","numero":"064","codigo":"dlr-064","nomePT":"Purrloin","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-065-reg","numero":"065","codigo":"dlr-065","nomePT":"Liepard","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-065-rev","numero":"065","codigo":"dlr-065","nomePT":"Liepard","nomeEN":"","tipo":"Reverse Foil","preco":0.14},
+    {"id":"dlr-065-rev","numero":"065","codigo":"dlr-065","nomePT":"Liepard","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-066-reg","numero":"066","codigo":"dlr-066","nomePT":"Zorua","nomeEN":"","tipo":"Regular","preco":0.11},
     {"id":"dlr-066-rev","numero":"066","codigo":"dlr-066","nomePT":"Zorua","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-067-foil","numero":"067","codigo":"dlr-067","nomePT":"Zoroark ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":4.9},
