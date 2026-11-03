@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:41:37.070Z",
+  "atualizadoEm": "2026-11-03T16:41:46.082Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -165,7 +165,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-083-rev","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-084-foil","numero":"084","codigo":"dlr-084","nomePT":"Mega Rayquaza ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":50},
     {"id":"dlr-085-reg","numero":"085","codigo":"dlr-085","nomePT":"Tornadus","nomeEN":"","tipo":"Regular","preco":0.24},
-    {"id":"dlr-085-rev","numero":"085","codigo":"dlr-085","nomePT":"Tornadus","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
+    {"id":"dlr-085-rev","numero":"085","codigo":"dlr-085","nomePT":"Tornadus","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-086-reg","numero":"086","codigo":"dlr-086","nomePT":"Fletchling","nomeEN":"","tipo":"Regular","preco":0.15},
     {"id":"dlr-086-rev","numero":"086","codigo":"dlr-086","nomePT":"Fletchling","nomeEN":"","tipo":"Reverse Foil","preco":0.15},
     {"id":"dlr-087-reg","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Regular","preco":0.24},
