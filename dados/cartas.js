@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:23:30.440Z",
+  "atualizadoEm": "2026-11-03T16:23:35.168Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -56,7 +56,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-026-foil","numero":"026","codigo":"dlr-026","nomePT":"Kyogre","nomeEN":"","tipo":"Foil","preco":0.7},
     {"id":"dlr-027-reg","numero":"027","codigo":"dlr-027","nomePT":"Frillish","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-027-rev","numero":"027","codigo":"dlr-027","nomePT":"Frillish","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-028-rev","numero":"028","codigo":"dlr-028","nomePT":"Jellicent","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
+    {"id":"dlr-028-rev","numero":"028","codigo":"dlr-028","nomePT":"Jellicent","nomeEN":"","tipo":"Reverse Foil","preco":0.25},
     {"id":"dlr-028-foil","numero":"028","codigo":"dlr-028","nomePT":"Jellicent","nomeEN":"","tipo":"Foil","preco":0.2},
     {"id":"dlr-029-foil","numero":"029","codigo":"dlr-029","nomePT":"Wishiwashi ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":3},
     {"id":"dlr-030-rev","numero":"030","codigo":"dlr-030","nomePT":"Electabuzz","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
