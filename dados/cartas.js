@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:28:04.577Z",
+  "atualizadoEm": "2026-11-03T16:28:21.231Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -78,7 +78,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-038-rev","numero":"038","codigo":"dlr-038","nomePT":"Pawmo","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-039-reg","numero":"039","codigo":"dlr-039","nomePT":"Pawmot","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-039-rev","numero":"039","codigo":"dlr-039","nomePT":"Pawmot","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-040-reg","numero":"040","codigo":"dlr-040","nomePT":"Wattrel","nomeEN":"","tipo":"Regular","preco":0.11},
+    {"id":"dlr-040-reg","numero":"040","codigo":"dlr-040","nomePT":"Wattrel","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-040-rev","numero":"040","codigo":"dlr-040","nomePT":"Wattrel","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-041-reg","numero":"041","codigo":"dlr-041","nomePT":"Kilowattrel","nomeEN":"","tipo":"Regular","preco":0.11},
     {"id":"dlr-041-rev","numero":"041","codigo":"dlr-041","nomePT":"Kilowattrel","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
