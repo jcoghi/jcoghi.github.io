@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:50:59.126Z",
+  "atualizadoEm": "2026-11-03T16:51:02.879Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -188,7 +188,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-098-reg","numero":"098","codigo":"dlr-098","nomePT":"Abismo Lendário (Esquerda)","nomeEN":"","tipo":"Regular","preco":2},
     {"id":"dlr-099-reg","numero":"099","codigo":"dlr-099","nomePT":"Abismo Lendário (Direita)","nomeEN":"","tipo":"Regular","preco":2},
     {"id":"dlr-100-reg","numero":"100","codigo":"dlr-100","nomePT":"Chapéu de Mega Rayquaza","nomeEN":"","tipo":"Regular","preco":1},
-    {"id":"dlr-100-rev","numero":"100","codigo":"dlr-100","nomePT":"Chapéu de Mega Rayquaza","nomeEN":"","tipo":"Reverse Foil","preco":0.99},
+    {"id":"dlr-100-rev","numero":"100","codigo":"dlr-100","nomePT":"Chapéu de Mega Rayquaza","nomeEN":"","tipo":"Reverse Foil","preco":1.5},
     {"id":"dlr-101-reg","numero":"101","codigo":"dlr-101","nomePT":"Onigiri Saboroso","nomeEN":"Tasty Rice Ball","tipo":"Regular","preco":0.19},
     {"id":"dlr-101-rev","numero":"101","codigo":"dlr-101","nomePT":"Onigiri Saboroso","nomeEN":"Tasty Rice Ball","tipo":"Reverse Foil","preco":0.19},
     {"id":"dlr-102-reg","numero":"102","codigo":"dlr-102","nomePT":"Treinamento de Tate e Liza","nomeEN":"","tipo":"Regular","preco":0.14},
