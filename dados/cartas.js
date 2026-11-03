@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:39:38.874Z",
+  "atualizadoEm": "2026-11-03T16:39:51.708Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -134,7 +134,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-067-foil","numero":"067","codigo":"dlr-067","nomePT":"Zoroark ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":16},
     {"id":"dlr-068-reg","numero":"068","codigo":"dlr-068","nomePT":"Inkay","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-068-rev","numero":"068","codigo":"dlr-068","nomePT":"Inkay","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-069-foil","numero":"069","codigo":"dlr-069","nomePT":"Mega Malamar ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":1},
+    {"id":"dlr-069-foil","numero":"069","codigo":"dlr-069","nomePT":"Mega Malamar ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":18},
     {"id":"dlr-070-reg","numero":"070","codigo":"dlr-070","nomePT":"Morpeko","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-070-rev","numero":"070","codigo":"dlr-070","nomePT":"Morpeko","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
     {"id":"dlr-071-reg","numero":"071","codigo":"dlr-071","nomePT":"Zarude","nomeEN":"","tipo":"Regular","preco":0.15},
