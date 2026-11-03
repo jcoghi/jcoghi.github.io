@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:10:23.222Z",
+  "atualizadoEm": "2026-11-03T16:10:53.051Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -25,7 +25,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-009-rev","numero":"009","codigo":"dlr-009","nomePT":"Virizion","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-010-reg","numero":"010","codigo":"dlr-010","nomePT":"Wimpod","nomeEN":"","tipo":"Regular","preco":0.11},
     {"id":"dlr-010-rev","numero":"010","codigo":"dlr-010","nomePT":"Wimpod","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
-    {"id":"dlr-011-foil","numero":"011","codigo":"dlr-011","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":5},
+    {"id":"dlr-011-foil","numero":"011","codigo":"dlr-011","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":16},
     {"id":"dlr-012-reg","numero":"012","codigo":"dlr-012","nomePT":"Sprigatito","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-012-rev","numero":"012","codigo":"dlr-012","nomePT":"Sprigatito","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-013-reg","numero":"013","codigo":"dlr-013","nomePT":"Floragato","nomeEN":"","tipo":"Regular","preco":0.2},
