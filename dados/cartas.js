@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T17:04:17.434Z",
+  "atualizadoEm": "2026-11-03T17:04:56.286Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -231,7 +231,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-137-foil","numero":"137","codigo":"dlr-137","nomePT":"Mega Golurk ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":288.99},
     {"id":"dlr-138-foil","numero":"138","codigo":"dlr-138","nomePT":"Mega Rayquaza ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
     {"id":"dlr-139-foil","numero":"139","codigo":"dlr-139","nomePT":"Arão","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":390},
-    {"id":"dlr-140-foil","numero":"140","codigo":"dlr-140","nomePT":"Confiança da Zínia","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":387.9},
+    {"id":"dlr-140-foil","numero":"140","codigo":"dlr-140","nomePT":"Confiança da Zínia","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
     {"id":"dlr-141-foil","numero":"141","codigo":"dlr-141","nomePT":"Mega Rayquaza ex","nomeEN":"","tipo":"Foil","raridade":"Hiper Rara / Dourada","preco":9999}
   ]
 };
