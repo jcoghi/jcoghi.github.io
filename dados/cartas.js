@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:20:49.293Z",
+  "atualizadoEm": "2026-11-03T16:23:02.634Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -52,7 +52,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-024-rev","numero":"024","codigo":"dlr-024","nomePT":"Heatmor","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-025-reg","numero":"025","codigo":"dlr-025","nomePT":"Mantine","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-025-rev","numero":"025","codigo":"dlr-025","nomePT":"Mantine","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-026-rev","numero":"026","codigo":"dlr-026","nomePT":"Kyogre","nomeEN":"","tipo":"Reverse Foil","preco":0.5},
+    {"id":"dlr-026-rev","numero":"026","codigo":"dlr-026","nomePT":"Kyogre","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-026-foil","numero":"026","codigo":"dlr-026","nomePT":"Kyogre","nomeEN":"","tipo":"Foil","preco":0.8},
     {"id":"dlr-027-reg","numero":"027","codigo":"dlr-027","nomePT":"Frillish","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-027-rev","numero":"027","codigo":"dlr-027","nomePT":"Frillish","nomeEN":"","tipo":"Reverse Foil","preco":0.67},
