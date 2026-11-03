@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:58:03.267Z",
+  "atualizadoEm": "2026-11-03T17:01:24.568Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -223,7 +223,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-129-foil","numero":"129","codigo":"dlr-129","nomePT":"Pegador de Pokémon","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":39.9},
     {"id":"dlr-130-foil","numero":"130","codigo":"dlr-130","nomePT":"Treinamento de Tate e Liza","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":39.9},
     {"id":"dlr-131-foil","numero":"131","codigo":"dlr-131","nomePT":"Confiança da Zínia","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":220},
-    {"id":"dlr-132-foil","numero":"132","codigo":"dlr-132","nomePT":"Energia Borbulhante","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":0.95},
+    {"id":"dlr-132-foil","numero":"132","codigo":"dlr-132","nomePT":"Energia Borbulhante","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":15},
     {"id":"dlr-133-foil","numero":"133","codigo":"dlr-133","nomePT":"Energia Crescente","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":30},
     {"id":"dlr-134-foil","numero":"134","codigo":"dlr-134","nomePT":"Energia Nitro","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":30},
     {"id":"dlr-135-foil","numero":"135","codigo":"dlr-135","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":295},
