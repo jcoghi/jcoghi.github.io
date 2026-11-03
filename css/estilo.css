@@ -147,6 +147,8 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
 .pedido-aviso { margin: 0; color: var(--destaque); font-size: 12px; font-weight: 600; }
 .pedido-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 8px; border-top: 2px solid var(--texto); }
 .pedido-total strong { font-size: 26px; color: var(--ok); }
+.pedido-total-pix { border-top: 0; padding-top: 0; }
+.pedido-total-pix strong { font-size: 20px; }
 .perigo:hover:not(:disabled) { color: var(--destaque); }
 
 

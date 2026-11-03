@@ -41,6 +41,7 @@ const el = {
   status: $<HTMLParagraphElement>('#status'),
   pedidoLista: $<HTMLUListElement>('#pedido-lista'),
   pedidoTotal: $<HTMLElement>('#pedido-total'),
+  pedidoTotalPix: $<HTMLElement>('#pedido-total-pix'),
   pedidoItens: $<HTMLParagraphElement>('#pedido-itens'),
   pedidoAviso: $<HTMLParagraphElement>('#pedido-aviso'),
   zerar: $<HTMLButtonElement>('#btn-zerar'),
@@ -397,7 +398,9 @@ function renderizarPedido(): void {
       </li>`;
   }).join('') || '<li class="vazio">Nenhuma carta no pedido.</li>';
 
-  el.pedidoTotal.textContent = moeda.format(Math.round(total * 100) / 100);
+  const totalArredondado = Math.round(total * 100) / 100;
+  el.pedidoTotal.textContent = moeda.format(totalArredondado);
+  el.pedidoTotalPix.textContent = moeda.format(Math.round(totalArredondado * 0.9 * 100) / 100);
   el.pedidoItens.textContent = `${itens.length} carta(s) · ${unidades} unidade(s)`;
   el.pedidoAviso.hidden = semPreco === 0;
   el.pedidoAviso.textContent = `Atenção: ${semPreco} carta(s) no pedido sem preço cadastrado.`;
