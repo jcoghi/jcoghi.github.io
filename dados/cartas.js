@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:44:31.523Z",
+  "atualizadoEm": "2026-11-03T16:45:01.065Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -171,7 +171,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-087-reg","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-087-rev","numero":"087","codigo":"dlr-087","nomePT":"Fletchinder","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-088-foil","numero":"088","codigo":"dlr-088","nomePT":"Talonflame ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":60},
-    {"id":"dlr-089-reg","numero":"089","codigo":"dlr-089","nomePT":"Arão","nomeEN":"","tipo":"Regular","preco":0.49},
+    {"id":"dlr-089-reg","numero":"089","codigo":"dlr-089","nomePT":"Arão","nomeEN":"","tipo":"Regular","preco":0.7},
     {"id":"dlr-089-rev","numero":"089","codigo":"dlr-089","nomePT":"Arão","nomeEN":"","tipo":"Reverse Foil","preco":0.49},
     {"id":"dlr-090-reg","numero":"090","codigo":"dlr-090","nomePT":"Lanterna de Aventura","nomeEN":"Adventure Lantern","tipo":"Regular","preco":0.24},
     {"id":"dlr-090-rev","numero":"090","codigo":"dlr-090","nomePT":"Lanterna de Aventura","nomeEN":"Adventure Lantern","tipo":"Reverse Foil","preco":0.24},
