@@ -121,6 +121,127 @@ async function detectarServidor() {
         return false;
     }
 }
+// ---------- gravação no GitHub (site publicado em <usuario>.github.io) ----------
+// Repositório do site: em jcoghi.github.io, o repositório jcoghi/jcoghi.github.io
+const GITHUB = {
+    dono: location.hostname.split('.')[0],
+    repo: location.hostname,
+    branch: 'main',
+    arquivo: 'dados/cartas.js',
+};
+const NO_GITHUB = location.hostname.endsWith('.github.io');
+const CHAVE_TOKEN = 'github-token';
+// Token do GitHub com permissão de escrita no repositório; pedido uma vez e lembrado neste navegador
+function tokenGitHub() {
+    let token = null;
+    try {
+        token = localStorage.getItem(CHAVE_TOKEN);
+    }
+    catch { /* armazenamento bloqueado */ }
+    if (!token) {
+        token = prompt(`Para gravar o preço no banco de dados (${GITHUB.arquivo}), cole um token do GitHub.\n\n`
+            + `Crie em github.com/settings/personal-access-tokens: "Fine-grained", acesso só ao repositório `
+            + `${GITHUB.dono}/${GITHUB.repo}, permissão "Contents: Read and write".\n\n`
+            + 'O token fica salvo só neste navegador.')?.trim() || null;
+        if (!token)
+            throw new Error('sem o token do GitHub, o preço não foi gravado');
+        try {
+            localStorage.setItem(CHAVE_TOKEN, token);
+        }
+        catch { /* vale só nesta vez */ }
+    }
+    return token;
+}
+function esquecerTokenGitHub() {
+    try {
+        localStorage.removeItem(CHAVE_TOKEN);
+    }
+    catch { /* nada a fazer */ }
+}
+// Base64 do GitHub <-> texto UTF-8 (o arquivo tem acentos)
+function base64ParaTexto(base64) {
+    const binario = atob(base64.replace(/\s/g, ''));
+    return new TextDecoder().decode(Uint8Array.from(binario, (ch) => ch.charCodeAt(0)));
+}
+function textoParaBase64(texto) {
+    let binario = '';
+    for (const byte of new TextEncoder().encode(texto))
+        binario += String.fromCharCode(byte);
+    return btoa(binario);
+}
+// Busca a carta pelo número e pela versão no texto de dados/cartas.js (uma carta por linha)
+// e troca o preço dela; também atualiza a data do banco
+function alterarPrecoPorNumero(texto, numero, tipo, preco) {
+    const fimDeLinha = texto.includes('\r\n') ? '\r\n' : '\n';
+    const linhas = texto.split(/\r?\n/);
+    const i = linhas.findIndex((linha) => {
+        const t = linha.trim().replace(/,$/, '');
+        if (!t.startsWith('{"id"'))
+            return false;
+        const carta = JSON.parse(t);
+        return carta.numero === numero && carta.tipo === tipo;
+    });
+    if (i < 0)
+        throw new Error(`carta Nº ${numero} (${tipo}) não encontrada em ${GITHUB.arquivo}`);
+    const virgula = linhas[i].trimEnd().endsWith(',') ? ',' : '';
+    const carta = JSON.parse(linhas[i].trim().replace(/,$/, ''));
+    carta.preco = preco;
+    linhas[i] = '    ' + JSON.stringify(carta) + virgula;
+    const j = linhas.findIndex((l) => l.trimStart().startsWith('"atualizadoEm"'));
+    if (j >= 0)
+        linhas[j] = `  "atualizadoEm": ${JSON.stringify(new Date().toISOString())},`;
+    return linhas.join(fimDeLinha);
+}
+// Lê dados/cartas.js do repositório, altera a carta e grava com um commit.
+// Se outro commit entrar no meio (conflito), lê de novo e tenta mais uma vez.
+async function atualizarCartaNoGitHub(numero, tipo, preco) {
+    const url = `https://api.github.com/repos/${GITHUB.dono}/${GITHUB.repo}/contents/${GITHUB.arquivo}`;
+    for (let tentativa = 1;; tentativa++) {
+        const cabecalhos = { Authorization: `Bearer ${tokenGitHub()}`, Accept: 'application/vnd.github+json' };
+        const leitura = await fetch(`${url}?ref=${GITHUB.branch}`, { headers: cabecalhos, cache: 'no-store' });
+        if (leitura.status === 401 || leitura.status === 403) {
+            esquecerTokenGitHub();
+            throw new Error('o GitHub recusou o token; tente de novo e cole um token válido');
+        }
+        if (!leitura.ok)
+            throw new Error(`erro ${leitura.status} ao ler ${GITHUB.arquivo} no GitHub`);
+        const atual = await leitura.json();
+        const texto = alterarPrecoPorNumero(base64ParaTexto(atual.content), numero, tipo, preco);
+        const valor = preco == null ? 'sem preço' : moeda.format(preco);
+        const gravacao = await fetch(url, {
+            method: 'PUT',
+            headers: cabecalhos,
+            body: JSON.stringify({
+                message: `Preço da carta Nº ${numero} (${tipo}): ${valor}`,
+                content: textoParaBase64(texto),
+                sha: atual.sha,
+                branch: GITHUB.branch,
+            }),
+        });
+        if (gravacao.ok)
+            return;
+        if (gravacao.status === 401 || gravacao.status === 403) {
+            esquecerTokenGitHub();
+            throw new Error('o token não tem permissão de escrita no repositório (Contents: Read and write)');
+        }
+        if ((gravacao.status === 409 || gravacao.status === 422) && tentativa < 2)
+            continue;
+        throw new Error(`erro ${gravacao.status} ao gravar no GitHub`);
+    }
+}
+// Grava o preço no banco do repositório. O site publicado só mostra o arquivo novo depois
+// de 1–2 minutos: até lá o preço também fica guardado neste navegador (some sozinho depois).
+async function gravarPrecoNoGitHub(c, preco) {
+    mostrarStatus(`Gravando o preço de ${c.nomePT} (Nº ${c.numero} ${c.tipo}) no GitHub…`, 'carregando');
+    await atualizarCartaNoGitHub(c.numero, c.tipo, preco);
+    c.precoBanco = preco;
+    c.preco = preco;
+    c.manual = false;
+    if (preco == null)
+        await DB.removerPreco(c.id);
+    else
+        await DB.salvarPreco({ chave: c.id, preco });
+}
 // Grava o preço na carta, em dados/cartas.js (null = sem preço)
 async function gravarPrecoNoArquivo(c, preco) {
     const resposta = await fetch('api/preco', {
@@ -172,7 +293,8 @@ function mostrarInfoBanco(banco) {
     const manuais = estado.cartas.filter((c) => c.manual).length;
     mostrarStatus(`Coleção ${banco.colecao.toUpperCase()} · ${estado.cartas.length} entradas (${comPreco} com preço) · atualizado em ${data}`
         + (manuais ? ` · ${manuais} preço(s) digitado(s) à mão` : '')
-        + (estado.servidor ? ' · preços editados são gravados em dados/cartas.js' : ''));
+        + (destinoPreco() === 'arquivo' ? ' · preços editados são gravados em dados/cartas.js'
+            : destinoPreco() === 'github' ? ' · preços editados são gravados no GitHub (o site atualiza em 1–2 min)' : ''));
 }
 // ---------- busca e listagem ----------
 function filtrar() {
@@ -279,15 +401,19 @@ async function definirQuantidade(id, valor, artigo) {
 function celulaPreco(artigo) {
     return artigo.querySelector('.preco-celula');
 }
-// Novo preço da carta: gravado em dados/cartas.js (null = sem preço) ou, sem o servidor local,
-// guardado só no navegador (null = volta ao preço do arquivo)
-async function definirPreco(artigo, preco, noArquivo) {
+function destinoPreco() {
+    return estado.servidor ? 'arquivo' : NO_GITHUB ? 'github' : 'navegador';
+}
+// Novo preço da carta: no banco (null = sem preço) ou só no navegador (null = volta ao preço do arquivo)
+async function definirPreco(artigo, preco, destino) {
     const c = estado.porId.get(artigo.dataset.id);
     if (!c)
         return;
     try {
-        if (noArquivo)
+        if (destino === 'arquivo')
             await gravarPrecoNoArquivo(c, preco);
+        else if (destino === 'github')
+            await gravarPrecoNoGitHub(c, preco);
         else
             await salvarPreco(c, preco);
     }
@@ -308,9 +434,9 @@ function abrirEdicaoPreco(artigo) {
     if (!c)
         return;
     const valor = c.preco == null ? '' : c.preco.toFixed(2).replace('.', ',');
-    const ajuda = estado.servidor
-        ? 'Enter grava na carta (dados/cartas.js) · Esc cancela · vazio = sem preço'
-        : 'Enter salva neste navegador · Esc cancela · vazio volta ao preço do banco';
+    const ajuda = destinoPreco() === 'navegador'
+        ? 'Enter salva neste navegador · Esc cancela · vazio volta ao preço do banco'
+        : 'Enter grava no banco (dados/cartas.js) · Esc cancela · vazio = sem preço';
     celulaPreco(artigo).innerHTML = `
     <input type="text" inputmode="decimal" class="preco-input" value="${valor}" placeholder="0,00"
       aria-label="Novo preço" title="${ajuda}">`;
@@ -334,7 +460,7 @@ function fecharEdicaoPreco(input, salvar) {
     // Trocar o HTML com o campo em foco dispara focusout no Chrome: marca para não fechar duas vezes
     input.dataset.fechado = '1';
     if (salvar)
-        definirPreco(artigo, preco, estado.servidor);
+        definirPreco(artigo, preco, destinoPreco());
     else
         celulaPreco(artigo).innerHTML = htmlPreco(c);
     return true;
@@ -411,7 +537,7 @@ el.resultados.addEventListener('click', (e) => {
     if (alvo.matches('.editar-preco'))
         abrirEdicaoPreco(artigo);
     else if (alvo.matches('.restaurar-preco'))
-        definirPreco(artigo, null, false);
+        definirPreco(artigo, null, 'navegador');
 });
 // No campo de preço: Enter salva e volta para a busca; Esc cancela
 el.resultados.addEventListener('keydown', (e) => {
