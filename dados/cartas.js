@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:29:31.327Z",
+  "atualizadoEm": "2026-11-03T16:29:38.034Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -85,7 +85,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-042-reg","numero":"042","codigo":"dlr-042","nomePT":"Miraidon","nomeEN":"","tipo":"Regular","preco":0.3},
     {"id":"dlr-042-rev","numero":"042","codigo":"dlr-042","nomePT":"Miraidon","nomeEN":"","tipo":"Reverse Foil","preco":0.9},
     {"id":"dlr-043-reg","numero":"043","codigo":"dlr-043","nomePT":"Drowzee","nomeEN":"","tipo":"Regular","preco":0.3},
-    {"id":"dlr-043-rev","numero":"043","codigo":"dlr-043","nomePT":"Drowzee","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
+    {"id":"dlr-043-rev","numero":"043","codigo":"dlr-043","nomePT":"Drowzee","nomeEN":"","tipo":"Reverse Foil","preco":0.9},
     {"id":"dlr-044-reg","numero":"044","codigo":"dlr-044","nomePT":"Hypno","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-044-rev","numero":"044","codigo":"dlr-044","nomePT":"Hypno","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-045-rev","numero":"045","codigo":"dlr-045","nomePT":"Giratina","nomeEN":"","tipo":"Reverse Foil","preco":0.4},
