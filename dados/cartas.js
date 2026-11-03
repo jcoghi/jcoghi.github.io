@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:54:26.907Z",
+  "atualizadoEm": "2026-11-03T16:54:37.164Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -198,7 +198,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-104-foil","numero":"104","codigo":"dlr-104","nomePT":"Masquerain","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":45},
     {"id":"dlr-105-foil","numero":"105","codigo":"dlr-105","nomePT":"Sprigatito","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":75},
     {"id":"dlr-106-foil","numero":"106","codigo":"dlr-106","nomePT":"Growlithe","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":75},
-    {"id":"dlr-107-foil","numero":"107","codigo":"dlr-107","nomePT":"Magmortar","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":39.9},
+    {"id":"dlr-107-foil","numero":"107","codigo":"dlr-107","nomePT":"Magmortar","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":65},
     {"id":"dlr-108-foil","numero":"108","codigo":"dlr-108","nomePT":"Electivire","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":34.89},
     {"id":"dlr-109-foil","numero":"109","codigo":"dlr-109","nomePT":"Pincurchin","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":28},
     {"id":"dlr-110-foil","numero":"110","codigo":"dlr-110","nomePT":"Enamorus","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":29.8},
