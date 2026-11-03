@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T17:03:04.766Z",
+  "atualizadoEm": "2026-11-03T17:03:37.827Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -219,7 +219,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-125-foil","numero":"125","codigo":"dlr-125","nomePT":"Arão","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":96.9},
     {"id":"dlr-126-foil","numero":"126","codigo":"dlr-126","nomePT":"Lanterna de Aventura","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":53.25},
     {"id":"dlr-127-foil","numero":"127","codigo":"dlr-127","nomePT":"Colete Customizado","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":40},
-    {"id":"dlr-128-foil","numero":"128","codigo":"dlr-128","nomePT":"Hype da Emcee","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":49.9},
+    {"id":"dlr-128-foil","numero":"128","codigo":"dlr-128","nomePT":"Hype da Emcee","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":40},
     {"id":"dlr-129-foil","numero":"129","codigo":"dlr-129","nomePT":"Pegador de Pokémon","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":39.9},
     {"id":"dlr-130-foil","numero":"130","codigo":"dlr-130","nomePT":"Treinamento de Tate e Liza","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":39.9},
     {"id":"dlr-131-foil","numero":"131","codigo":"dlr-131","nomePT":"Confiança da Zínia","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":220},
