@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:31:38.253Z",
+  "atualizadoEm": "2026-11-03T16:31:42.404Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -97,7 +97,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-048-rev","numero":"048","codigo":"dlr-048","nomePT":"Enamorus","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-049-reg","numero":"049","codigo":"dlr-049","nomePT":"Sandshrew","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-049-rev","numero":"049","codigo":"dlr-049","nomePT":"Sandshrew","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-050-reg","numero":"050","codigo":"dlr-050","nomePT":"Sandslash","nomeEN":"","tipo":"Regular","preco":0.15},
+    {"id":"dlr-050-reg","numero":"050","codigo":"dlr-050","nomePT":"Sandslash","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-050-rev","numero":"050","codigo":"dlr-050","nomePT":"Sandslash","nomeEN":"","tipo":"Reverse Foil","preco":0.15},
     {"id":"dlr-051-reg","numero":"051","codigo":"dlr-051","nomePT":"Onix","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-051-rev","numero":"051","codigo":"dlr-051","nomePT":"Onix","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
