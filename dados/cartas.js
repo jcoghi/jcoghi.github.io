@@ -2,11 +2,11 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:08:56.641Z",
+  "atualizadoEm": "2026-11-03T16:08:59.713Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-001-rev","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Reverse Foil","preco":0.14},
+    {"id":"dlr-001-rev","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Reverse Foil","preco":0.35},
     {"id":"dlr-002-reg","numero":"002","codigo":"dlr-002","nomePT":"Surskit","nomeEN":"","tipo":"Regular","preco":0.1},
     {"id":"dlr-002-rev","numero":"002","codigo":"dlr-002","nomePT":"Surskit","nomeEN":"","tipo":"Reverse Foil","preco":0.1},
     {"id":"dlr-003-reg","numero":"003","codigo":"dlr-003","nomePT":"Masquerain","nomeEN":"","tipo":"Regular","preco":0.25},
