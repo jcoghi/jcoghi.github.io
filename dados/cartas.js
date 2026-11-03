@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:25:29.982Z",
+  "atualizadoEm": "2026-11-03T16:26:22.622Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -65,7 +65,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-031-foil","numero":"031","codigo":"dlr-031","nomePT":"Electivire","nomeEN":"","tipo":"Foil","preco":0.1},
     {"id":"dlr-032-reg","numero":"032","codigo":"dlr-032","nomePT":"Jolteon","nomeEN":"","tipo":"Regular","preco":0.5},
     {"id":"dlr-032-rev","numero":"032","codigo":"dlr-032","nomePT":"Jolteon","nomeEN":"","tipo":"Reverse Foil","preco":1},
-    {"id":"dlr-033-foil","numero":"033","codigo":"dlr-033","nomePT":"Raikou ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":6},
+    {"id":"dlr-033-foil","numero":"033","codigo":"dlr-033","nomePT":"Raikou ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":14},
     {"id":"dlr-034-reg","numero":"034","codigo":"dlr-034","nomePT":"Rotom","nomeEN":"","tipo":"Regular","preco":0.11},
     {"id":"dlr-034-rev","numero":"034","codigo":"dlr-034","nomePT":"Rotom","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-035-reg","numero":"035","codigo":"dlr-035","nomePT":"Thundurus","nomeEN":"","tipo":"Regular","preco":0.1},
