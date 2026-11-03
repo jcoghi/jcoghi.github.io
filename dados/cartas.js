@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:31:49.818Z",
+  "atualizadoEm": "2026-11-03T16:31:52.411Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -101,7 +101,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-050-rev","numero":"050","codigo":"dlr-050","nomePT":"Sandslash","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-051-reg","numero":"051","codigo":"dlr-051","nomePT":"Onix","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-051-rev","numero":"051","codigo":"dlr-051","nomePT":"Onix","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-052-rev","numero":"052","codigo":"dlr-052","nomePT":"Steelix","nomeEN":"","tipo":"Reverse Foil","preco":0.19},
+    {"id":"dlr-052-rev","numero":"052","codigo":"dlr-052","nomePT":"Steelix","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-052-foil","numero":"052","codigo":"dlr-052","nomePT":"Steelix","nomeEN":"","tipo":"Foil","preco":0.19},
     {"id":"dlr-053-rev","numero":"053","codigo":"dlr-053","nomePT":"Groudon","nomeEN":"","tipo":"Reverse Foil","preco":0.3},
     {"id":"dlr-053-foil","numero":"053","codigo":"dlr-053","nomePT":"Groudon","nomeEN":"","tipo":"Foil","preco":0.3},
