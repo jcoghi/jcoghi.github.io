@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:15:53.446Z",
+  "atualizadoEm": "2026-11-03T16:16:22.013Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -47,7 +47,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-021-foil","numero":"021","codigo":"dlr-021","nomePT":"Magmortar","nomeEN":"","tipo":"Foil","preco":0.2},
     {"id":"dlr-022-reg","numero":"022","codigo":"dlr-022","nomePT":"Torkoal","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-022-rev","numero":"022","codigo":"dlr-022","nomePT":"Torkoal","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
-    {"id":"dlr-023-foil","numero":"023","codigo":"dlr-023","nomePT":"Rotom Calor ex","nomeEN":"Heat Rotom ex","tipo":"Foil","raridade":"Rara Dupla","preco":3},
+    {"id":"dlr-023-foil","numero":"023","codigo":"dlr-023","nomePT":"Rotom Calor ex","nomeEN":"Heat Rotom ex","tipo":"Foil","raridade":"Rara Dupla","preco":6.9},
     {"id":"dlr-024-reg","numero":"024","codigo":"dlr-024","nomePT":"Heatmor","nomeEN":"","tipo":"Regular","preco":0.14},
     {"id":"dlr-024-rev","numero":"024","codigo":"dlr-024","nomePT":"Heatmor","nomeEN":"","tipo":"Reverse Foil","preco":0.14},
     {"id":"dlr-025-reg","numero":"025","codigo":"dlr-025","nomePT":"Mantine","nomeEN":"","tipo":"Regular","preco":0.11},
