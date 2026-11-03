@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:56:38.409Z",
+  "atualizadoEm": "2026-11-03T16:56:49.324Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -206,7 +206,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-112-foil","numero":"112","codigo":"dlr-112","nomePT":"Zorua","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":80},
     {"id":"dlr-113-foil","numero":"113","codigo":"dlr-113","nomePT":"Inkay","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":35},
     {"id":"dlr-114-foil","numero":"114","codigo":"dlr-114","nomePT":"Eevee","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":170},
-    {"id":"dlr-115-foil","numero":"115","codigo":"dlr-115","nomePT":"Azurill","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":99.99},
+    {"id":"dlr-115-foil","numero":"115","codigo":"dlr-115","nomePT":"Azurill","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":60},
     {"id":"dlr-116-foil","numero":"116","codigo":"dlr-116","nomePT":"Altaria","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":24.9},
     {"id":"dlr-117-foil","numero":"117","codigo":"dlr-117","nomePT":"Kecleon","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":70},
     {"id":"dlr-118-foil","numero":"118","codigo":"dlr-118","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":34.94},
