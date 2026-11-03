@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:27:42.273Z",
+  "atualizadoEm": "2026-11-03T16:27:43.874Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -69,7 +69,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-034-reg","numero":"034","codigo":"dlr-034","nomePT":"Rotom","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-034-rev","numero":"034","codigo":"dlr-034","nomePT":"Rotom","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-035-reg","numero":"035","codigo":"dlr-035","nomePT":"Thundurus","nomeEN":"","tipo":"Regular","preco":0.5},
-    {"id":"dlr-035-rev","numero":"035","codigo":"dlr-035","nomePT":"Thundurus","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
+    {"id":"dlr-035-rev","numero":"035","codigo":"dlr-035","nomePT":"Thundurus","nomeEN":"","tipo":"Reverse Foil","preco":1},
     {"id":"dlr-036-reg","numero":"036","codigo":"dlr-036","nomePT":"Pincurchin","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-036-rev","numero":"036","codigo":"dlr-036","nomePT":"Pincurchin","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-037-reg","numero":"037","codigo":"dlr-037","nomePT":"Pawmi","nomeEN":"","tipo":"Regular","preco":0.25},
