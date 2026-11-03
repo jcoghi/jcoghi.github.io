@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:37:58.971Z",
+  "atualizadoEm": "2026-11-03T16:38:00.960Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -124,7 +124,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-062-reg","numero":"062","codigo":"dlr-062","nomePT":"Sharpedo","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-062-rev","numero":"062","codigo":"dlr-062","nomePT":"Sharpedo","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-063-reg","numero":"063","codigo":"dlr-063","nomePT":"Darkrai","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-063-rev","numero":"063","codigo":"dlr-063","nomePT":"Darkrai","nomeEN":"","tipo":"Reverse Foil","preco":0.15},
+    {"id":"dlr-063-rev","numero":"063","codigo":"dlr-063","nomePT":"Darkrai","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-064-reg","numero":"064","codigo":"dlr-064","nomePT":"Purrloin","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-064-rev","numero":"064","codigo":"dlr-064","nomePT":"Purrloin","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
     {"id":"dlr-065-reg","numero":"065","codigo":"dlr-065","nomePT":"Liepard","nomeEN":"","tipo":"Regular","preco":0.14},
