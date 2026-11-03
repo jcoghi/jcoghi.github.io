@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:32:33.269Z",
+  "atualizadoEm": "2026-11-03T16:36:34.183Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -90,7 +90,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-044-rev","numero":"044","codigo":"dlr-044","nomePT":"Hypno","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-045-rev","numero":"045","codigo":"dlr-045","nomePT":"Giratina","nomeEN":"","tipo":"Reverse Foil","preco":0.4},
     {"id":"dlr-045-foil","numero":"045","codigo":"dlr-045","nomePT":"Giratina","nomeEN":"","tipo":"Foil","preco":0.4},
-    {"id":"dlr-046-reg","numero":"046","codigo":"dlr-046","nomePT":"Golett","nomeEN":"","tipo":"Regular","preco":0.1},
+    {"id":"dlr-046-reg","numero":"046","codigo":"dlr-046","nomePT":"Golett","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-046-rev","numero":"046","codigo":"dlr-046","nomePT":"Golett","nomeEN":"","tipo":"Reverse Foil","preco":0.1},
     {"id":"dlr-047-foil","numero":"047","codigo":"dlr-047","nomePT":"Mega Golurk ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":12},
     {"id":"dlr-048-reg","numero":"048","codigo":"dlr-048","nomePT":"Enamorus","nomeEN":"","tipo":"Regular","preco":0.25},
