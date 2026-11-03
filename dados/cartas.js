@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:19:32.481Z",
+  "atualizadoEm": "2026-11-03T16:19:36.271Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -33,7 +33,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-014-foil","numero":"014","codigo":"dlr-014","nomePT":"Meowscarada ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":8},
     {"id":"dlr-015-reg","numero":"015","codigo":"dlr-015","nomePT":"Smoliv","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-015-rev","numero":"015","codigo":"dlr-015","nomePT":"Smoliv","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-016-reg","numero":"016","codigo":"dlr-016","nomePT":"Dolliv","nomeEN":"","tipo":"Regular","preco":0.11},
+    {"id":"dlr-016-reg","numero":"016","codigo":"dlr-016","nomePT":"Dolliv","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-016-rev","numero":"016","codigo":"dlr-016","nomePT":"Dolliv","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-017-reg","numero":"017","codigo":"dlr-017","nomePT":"Arboliva","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-017-rev","numero":"017","codigo":"dlr-017","nomePT":"Arboliva","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
