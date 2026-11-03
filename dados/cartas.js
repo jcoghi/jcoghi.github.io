@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:41:01.516Z",
+  "atualizadoEm": "2026-11-03T16:41:04.613Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -161,7 +161,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-081-rev","numero":"081","codigo":"dlr-081","nomePT":"Swablu","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-082-rev","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-082-foil","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Foil","preco":0.5},
-    {"id":"dlr-083-reg","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Regular","preco":0.11},
+    {"id":"dlr-083-reg","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-083-rev","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-084-foil","numero":"084","codigo":"dlr-084","nomePT":"Mega Rayquaza ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":40},
     {"id":"dlr-085-reg","numero":"085","codigo":"dlr-085","nomePT":"Tornadus","nomeEN":"","tipo":"Regular","preco":0.24},
