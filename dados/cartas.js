@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:37:38.283Z",
+  "atualizadoEm": "2026-11-03T16:37:42.293Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -116,7 +116,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-058-reg","numero":"058","codigo":"dlr-058","nomePT":"Spinarak","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-058-rev","numero":"058","codigo":"dlr-058","nomePT":"Spinarak","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-059-reg","numero":"059","codigo":"dlr-059","nomePT":"Ariados","nomeEN":"","tipo":"Regular","preco":0.25},
-    {"id":"dlr-059-rev","numero":"059","codigo":"dlr-059","nomePT":"Ariados","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
+    {"id":"dlr-059-rev","numero":"059","codigo":"dlr-059","nomePT":"Ariados","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-060-reg","numero":"060","codigo":"dlr-060","nomePT":"Sableye","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-060-rev","numero":"060","codigo":"dlr-060","nomePT":"Sableye","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
     {"id":"dlr-061-reg","numero":"061","codigo":"dlr-061","nomePT":"Carvanha","nomeEN":"","tipo":"Regular","preco":0.24},
