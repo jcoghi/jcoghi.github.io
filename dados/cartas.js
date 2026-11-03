@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:17:53.023Z",
+  "atualizadoEm": "2026-11-03T16:18:20.042Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -23,7 +23,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-008-rev","numero":"008","codigo":"dlr-008","nomePT":"Shaymin","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-009-reg","numero":"009","codigo":"dlr-009","nomePT":"Virizion","nomeEN":"","tipo":"Regular","preco":0.4},
     {"id":"dlr-009-rev","numero":"009","codigo":"dlr-009","nomePT":"Virizion","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-010-reg","numero":"010","codigo":"dlr-010","nomePT":"Wimpod","nomeEN":"","tipo":"Regular","preco":0.11},
+    {"id":"dlr-010-reg","numero":"010","codigo":"dlr-010","nomePT":"Wimpod","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-010-rev","numero":"010","codigo":"dlr-010","nomePT":"Wimpod","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
     {"id":"dlr-011-foil","numero":"011","codigo":"dlr-011","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":16},
     {"id":"dlr-012-reg","numero":"012","codigo":"dlr-012","nomePT":"Sprigatito","nomeEN":"","tipo":"Regular","preco":0.25},
