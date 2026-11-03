@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:32:28.015Z",
+  "atualizadoEm": "2026-11-03T16:32:30.097Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -109,7 +109,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-054-rev","numero":"054","codigo":"dlr-054","nomePT":"Landorus","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-055-reg","numero":"055","codigo":"dlr-055","nomePT":"Nidoran Fêmea","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-055-rev","numero":"055","codigo":"dlr-055","nomePT":"Nidoran Fêmea","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-056-reg","numero":"056","codigo":"dlr-056","nomePT":"Nidorina","nomeEN":"","tipo":"Regular","preco":0.2},
+    {"id":"dlr-056-reg","numero":"056","codigo":"dlr-056","nomePT":"Nidorina","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-056-rev","numero":"056","codigo":"dlr-056","nomePT":"Nidorina","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-057-rev","numero":"057","codigo":"dlr-057","nomePT":"Nidoqueen","nomeEN":"","tipo":"Reverse Foil","preco":0.3},
     {"id":"dlr-057-foil","numero":"057","codigo":"dlr-057","nomePT":"Nidoqueen","nomeEN":"","tipo":"Foil","preco":0.3},
