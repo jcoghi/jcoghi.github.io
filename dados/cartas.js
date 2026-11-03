@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T17:10:24.920Z",
+  "atualizadoEm": "2026-11-03T17:11:51.636Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -212,7 +212,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-118-foil","numero":"118","codigo":"dlr-118","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":34.94},
     {"id":"dlr-119-foil","numero":"119","codigo":"dlr-119","nomePT":"Rotom Calor ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":29},
     {"id":"dlr-120-foil","numero":"120","codigo":"dlr-120","nomePT":"Wishiwashi ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":29.99},
-    {"id":"dlr-121-foil","numero":"121","codigo":"dlr-121","nomePT":"Raikou ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":540},
+    {"id":"dlr-121-foil","numero":"121","codigo":"dlr-121","nomePT":"Raikou ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":54},
     {"id":"dlr-122-foil","numero":"122","codigo":"dlr-122","nomePT":"Mega Golurk ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":45},
     {"id":"dlr-123-foil","numero":"123","codigo":"dlr-123","nomePT":"Mega Malamar ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":30},
     {"id":"dlr-124-foil","numero":"124","codigo":"dlr-124","nomePT":"Talonflame ex","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":150},
