@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:40:16.087Z",
+  "atualizadoEm": "2026-11-03T16:40:18.305Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -143,7 +143,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-072-rev","numero":"072","codigo":"dlr-072","nomePT":"Druddigon","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-073-reg","numero":"073","codigo":"dlr-073","nomePT":"Jangmo-o","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-073-rev","numero":"073","codigo":"dlr-073","nomePT":"Jangmo-o","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-074-reg","numero":"074","codigo":"dlr-074","nomePT":"Hakamo-o","nomeEN":"","tipo":"Regular","preco":0.2},
+    {"id":"dlr-074-reg","numero":"074","codigo":"dlr-074","nomePT":"Hakamo-o","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-074-rev","numero":"074","codigo":"dlr-074","nomePT":"Hakamo-o","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-075-rev","numero":"075","codigo":"dlr-075","nomePT":"Kommo-o","nomeEN":"","tipo":"Reverse Foil","preco":0.25},
     {"id":"dlr-075-foil","numero":"075","codigo":"dlr-075","nomePT":"Kommo-o","nomeEN":"","tipo":"Foil","preco":0.25},
