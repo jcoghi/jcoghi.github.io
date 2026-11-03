@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:40:56.038Z",
+  "atualizadoEm": "2026-11-03T16:40:58.937Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -159,7 +159,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-080-rev","numero":"080","codigo":"dlr-080","nomePT":"Azurill","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
     {"id":"dlr-081-reg","numero":"081","codigo":"dlr-081","nomePT":"Swablu","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-081-rev","numero":"081","codigo":"dlr-081","nomePT":"Swablu","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-082-rev","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Reverse Foil","preco":0.3},
+    {"id":"dlr-082-rev","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-082-foil","numero":"082","codigo":"dlr-082","nomePT":"Altaria","nomeEN":"","tipo":"Foil","preco":0.3},
     {"id":"dlr-083-reg","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Regular","preco":0.11},
     {"id":"dlr-083-rev","numero":"083","codigo":"dlr-083","nomePT":"Kecleon","nomeEN":"","tipo":"Reverse Foil","preco":0.11},
