@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T17:05:48.176Z",
+  "atualizadoEm": "2026-11-03T17:05:54.796Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -226,7 +226,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-132-foil","numero":"132","codigo":"dlr-132","nomePT":"Energia Borbulhante","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":15},
     {"id":"dlr-133-foil","numero":"133","codigo":"dlr-133","nomePT":"Energia Crescente","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":40},
     {"id":"dlr-134-foil","numero":"134","codigo":"dlr-134","nomePT":"Energia Nitro","nomeEN":"","tipo":"Foil","raridade":"Rara Ultra","preco":30},
-    {"id":"dlr-135-foil","numero":"135","codigo":"dlr-135","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":295},
+    {"id":"dlr-135-foil","numero":"135","codigo":"dlr-135","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
     {"id":"dlr-136-foil","numero":"136","codigo":"dlr-136","nomePT":"Raikou ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
     {"id":"dlr-137-foil","numero":"137","codigo":"dlr-137","nomePT":"Mega Golurk ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
     {"id":"dlr-138-foil","numero":"138","codigo":"dlr-138","nomePT":"Mega Rayquaza ex","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara Especial","preco":9999},
