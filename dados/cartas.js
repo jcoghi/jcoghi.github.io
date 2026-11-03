@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:12:55.603Z",
+  "atualizadoEm": "2026-11-03T16:13:16.882Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -28,7 +28,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-011-foil","numero":"011","codigo":"dlr-011","nomePT":"Mega Golisopod ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":16},
     {"id":"dlr-012-reg","numero":"012","codigo":"dlr-012","nomePT":"Sprigatito","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-012-rev","numero":"012","codigo":"dlr-012","nomePT":"Sprigatito","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-013-reg","numero":"013","codigo":"dlr-013","nomePT":"Floragato","nomeEN":"","tipo":"Regular","preco":0.2},
+    {"id":"dlr-013-reg","numero":"013","codigo":"dlr-013","nomePT":"Floragato","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-013-rev","numero":"013","codigo":"dlr-013","nomePT":"Floragato","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
     {"id":"dlr-014-foil","numero":"014","codigo":"dlr-014","nomePT":"Meowscarada ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":4},
     {"id":"dlr-015-reg","numero":"015","codigo":"dlr-015","nomePT":"Smoliv","nomeEN":"","tipo":"Regular","preco":0.2},
