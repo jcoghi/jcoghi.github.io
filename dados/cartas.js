@@ -60,7 +60,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-028-foil","numero":"028","codigo":"dlr-028","nomePT":"Jellicent","nomeEN":"","tipo":"Foil","preco":0.5},
     {"id":"dlr-029-foil","numero":"029","codigo":"dlr-029","nomePT":"Wishiwashi ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":7},
     {"id":"dlr-030-rev","numero":"030","codigo":"dlr-030","nomePT":"Electabuzz","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-030-foil","numero":"030","codigo":"dlr-030","nomePT":"Electabuzz","nomeEN":"","tipo":"Foil","preco":0.25},
+    {"id":"dlr-030-foil","numero":"030","codigo":"dlr-030","nomePT":"Electabuzz","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-031-rev","numero":"031","codigo":"dlr-031","nomePT":"Electivire","nomeEN":"","tipo":"Reverse Foil","preco":0.8},
     {"id":"dlr-031-foil","numero":"031","codigo":"dlr-031","nomePT":"Electivire","nomeEN":"","tipo":"Foil","preco":0.1},
     {"id":"dlr-032-reg","numero":"032","codigo":"dlr-032","nomePT":"Jolteon","nomeEN":"","tipo":"Regular","preco":0.5},
