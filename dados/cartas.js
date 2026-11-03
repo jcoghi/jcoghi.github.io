@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:14:46.389Z",
+  "atualizadoEm": "2026-11-03T16:14:58.347Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -13,7 +13,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-003-rev","numero":"003","codigo":"dlr-003","nomePT":"Masquerain","nomeEN":"","tipo":"Reverse Foil","preco":0.67},
     {"id":"dlr-004-reg","numero":"004","codigo":"dlr-004","nomePT":"Cacnea","nomeEN":"","tipo":"Regular","preco":0.24},
     {"id":"dlr-004-rev","numero":"004","codigo":"dlr-004","nomePT":"Cacnea","nomeEN":"","tipo":"Reverse Foil","preco":0.24},
-    {"id":"dlr-005-rev","numero":"005","codigo":"dlr-005","nomePT":"Cacturne","nomeEN":"","tipo":"Reverse Foil","preco":0.15},
+    {"id":"dlr-005-rev","numero":"005","codigo":"dlr-005","nomePT":"Cacturne","nomeEN":"","tipo":"Reverse Foil","preco":0.5},
     {"id":"dlr-005-foil","numero":"005","codigo":"dlr-005","nomePT":"Cacturne","nomeEN":"","tipo":"Foil","preco":0.15},
     {"id":"dlr-006-reg","numero":"006","codigo":"dlr-006","nomePT":"Combee","nomeEN":"","tipo":"Regular","preco":0.08},
     {"id":"dlr-006-rev","numero":"006","codigo":"dlr-006","nomePT":"Combee","nomeEN":"","tipo":"Reverse Foil","preco":0.08},
