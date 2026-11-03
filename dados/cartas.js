@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:39:58.869Z",
+  "atualizadoEm": "2026-11-03T16:40:00.957Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -137,7 +137,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-069-foil","numero":"069","codigo":"dlr-069","nomePT":"Mega Malamar ex","nomeEN":"","tipo":"Foil","raridade":"Rara Dupla","preco":18},
     {"id":"dlr-070-reg","numero":"070","codigo":"dlr-070","nomePT":"Morpeko","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-070-rev","numero":"070","codigo":"dlr-070","nomePT":"Morpeko","nomeEN":"","tipo":"Reverse Foil","preco":0.75},
-    {"id":"dlr-071-reg","numero":"071","codigo":"dlr-071","nomePT":"Zarude","nomeEN":"","tipo":"Regular","preco":0.15},
+    {"id":"dlr-071-reg","numero":"071","codigo":"dlr-071","nomePT":"Zarude","nomeEN":"","tipo":"Regular","preco":0.25},
     {"id":"dlr-071-rev","numero":"071","codigo":"dlr-071","nomePT":"Zarude","nomeEN":"","tipo":"Reverse Foil","preco":0.15},
     {"id":"dlr-072-reg","numero":"072","codigo":"dlr-072","nomePT":"Druddigon","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-072-rev","numero":"072","codigo":"dlr-072","nomePT":"Druddigon","nomeEN":"","tipo":"Reverse Foil","preco":0.2},
