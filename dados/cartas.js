@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-03T16:51:27.447Z",
+  "atualizadoEm": "2026-11-03T16:53:26.737Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.25},
@@ -193,7 +193,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-101-rev","numero":"101","codigo":"dlr-101","nomePT":"Onigiri Saboroso","nomeEN":"Tasty Rice Ball","tipo":"Reverse Foil","preco":2},
     {"id":"dlr-102-reg","numero":"102","codigo":"dlr-102","nomePT":"Treinamento de Tate e Liza","nomeEN":"","tipo":"Regular","preco":0.14},
     {"id":"dlr-102-rev","numero":"102","codigo":"dlr-102","nomePT":"Treinamento de Tate e Liza","nomeEN":"","tipo":"Reverse Foil","preco":0.14},
-    {"id":"dlr-103-reg","numero":"103","codigo":"dlr-103","nomePT":"Confiança da Zínia","nomeEN":"Zinnia's Trust","tipo":"Regular","preco":0.29},
+    {"id":"dlr-103-reg","numero":"103","codigo":"dlr-103","nomePT":"Confiança da Zínia","nomeEN":"Zinnia's Trust","tipo":"Regular","preco":1},
     {"id":"dlr-103-rev","numero":"103","codigo":"dlr-103","nomePT":"Confiança da Zínia","nomeEN":"Zinnia's Trust","tipo":"Reverse Foil","preco":0.29},
     {"id":"dlr-104-foil","numero":"104","codigo":"dlr-104","nomePT":"Masquerain","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":29.9},
     {"id":"dlr-105-foil","numero":"105","codigo":"dlr-105","nomePT":"Sprigatito","nomeEN":"","tipo":"Foil","raridade":"Ilustração Rara","preco":79},
