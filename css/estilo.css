@@ -7,6 +7,7 @@
   --destaque: #d62828;
   --destaque-escuro: #a61e1e;
   --ok: #1f8a4c;
+  --manual: #2459c7;
   --raio: 10px;
 }
 
@@ -83,7 +84,7 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
 
 .carta {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 70px 96px 130px;
+  grid-template-columns: 72px minmax(0, 1fr) 92px 160px 130px;
   gap: 12px;
   align-items: center;
   background: var(--painel);
@@ -98,12 +99,21 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
 .nomes strong, .nomes small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nomes small { color: var(--suave); font-size: 12px; }
 
-.tipo { justify-self: start; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.tipo { justify-self: start; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
 .tipo-regular { background: var(--suave); }
+.tipo-reverse-foil { background: linear-gradient(135deg, #5b5fc7, #2a9d8f); }
 .tipo-foil { background: linear-gradient(135deg, #b8860b, #e0b84a); }
 
-.carta .preco { text-align: right; font-size: 15px; font-weight: 700; }
+.preco-celula { display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.carta .preco { font-size: 15px; font-weight: 700; white-space: nowrap; }
 .carta .preco.falta { font-size: 12px; }
+.preco-celula button { width: 26px; height: 26px; padding: 0; line-height: 1; color: var(--suave); }
+.editar-preco { border-color: transparent; background: transparent; }
+.carta:hover .editar-preco { border-color: var(--borda); color: var(--texto); }
+.preco-input { width: 100%; max-width: 120px; padding: 5px 8px; border: 2px solid var(--manual); border-radius: 6px; text-align: right; font-weight: 700; }
+.preco-input:focus { outline: none; }
+.preco-input.invalido { border-color: var(--destaque); background: #fdecec; }
+.manual { color: var(--manual); }
 
 .qtd { display: grid; grid-template-columns: 34px 1fr 34px; gap: 4px; }
 .qtd button { padding: 4px 0; font-size: 16px; font-weight: 700; }
@@ -146,5 +156,5 @@ kbd { border: 1px solid var(--borda); border-radius: 4px; padding: 0 4px; backgr
   .pedido-lista { max-height: 220px; }
   .carta { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; }
   .carta .numero { grid-column: 1 / -1; }
-  .carta .preco { text-align: left; }
+  .preco-celula { justify-content: flex-start; }
 }

@@ -6,15 +6,18 @@
 //   001/103HeracrossRegularR$ 0,44
 //   011/103Mega Golisopod exFoil (Rara Dupla)R$ 5,69
 //   008/103ShayminRegularSem cotação
+//   001/103HeracrossReverse FoilR$ 0,14
 //
-// Cartas "Regular" viram duas entradas (Regular e Foil) com o mesmo preço;
-// cartas "Foil (raridade)" só existem em Foil. "Sem cotação" = sem preço.
+// Cada carta gera uma entrada com o acabamento informado. "Sem cotação" = sem preço.
 import fs from 'node:fs';
 import { gravarBanco, lerPreco, type CartaBanco, type TipoCarta } from './banco.ts';
 
-// número/total, nome, tipo (Regular | Foil (raridade)), valor (R$ x | Sem cotação).
-// O valor tem sempre 2 casas decimais: sem isso, "R$ 0,44002/103" engoliria o número da carta seguinte.
-const ITEM = /(\d{3})\/\d{3}(.+?)(Regular|Foil(?: \(([^)]*)\))?)(R\$ ?\d{1,3}(?:\.\d{3})*,\d{2}|Sem cotação)/g;
+// número/total, nome, tipo (Regular | Reverse Foil | Foil (raridade)), valor (R$ x | Sem cotação).
+// A fronteira da próxima numeração evita que "Sem cotação" consuma a carta seguinte.
+const ITEM = /(\d{3})\/\d{3}(.+?)(Regular|Reverse Foil|Foil(?: \(([^)]*)\))?)(R\$ ?\d{1,3}(?:\.\d{3})*,\d{2}|Sem cotação)(?=\d{3}\/\d{3}|\r?\n|$)/g;
+
+// Sufixo do id de cada versão: dlr-001-reg, dlr-001-rev, dlr-011-foil
+const SUFIXO: Record<TipoCarta, string> = { 'Regular': 'reg', 'Reverse Foil': 'rev', 'Foil': 'foil' };
 
 const [arquivo, prefixo = 'dlr'] = process.argv.slice(2);
 
@@ -29,12 +32,11 @@ try {
     const codigo = `${prefixo}-${numero}`;
     const nomePT = nomeBruto.trim();
     const preco = lerPreco(valor);
-    const entrada = (sufixo: string, tipo: TipoCarta): CartaBanco => ({
-      id: `${codigo}-${sufixo}`, numero, codigo, nomePT, nomeEN: '', tipo,
+    const tipo: TipoCarta = tipoTexto === 'Regular' || tipoTexto === 'Reverse Foil' ? tipoTexto : 'Foil';
+    cartas.push({
+      id: `${codigo}-${SUFIXO[tipo]}`, numero, codigo, nomePT, nomeEN: '', tipo,
       ...(raridade ? { raridade } : {}), preco,
     });
-    if (tipoTexto === 'Regular') cartas.push(entrada('reg', 'Regular'), entrada('foil', 'Foil'));
-    else cartas.push(entrada('foil', 'Foil'));
   }
   if (!itens) throw new Error('nenhuma carta reconhecida no arquivo; banco atual mantido');
 

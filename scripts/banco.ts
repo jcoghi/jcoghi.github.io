@@ -2,7 +2,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-export type TipoCarta = 'Regular' | 'Foil';
+export type TipoCarta = 'Regular' | 'Reverse Foil' | 'Foil';
+
+// Ordem das versões de uma mesma carta na lista
+export const ORDEM_TIPO: Record<TipoCarta, number> = { 'Regular': 0, 'Reverse Foil': 1, 'Foil': 2 };
 
 export interface CartaBanco {
   id: string;
@@ -26,14 +29,14 @@ export function lerPreco(valor: string | number | undefined): number | null {
   return t && Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : null;
 }
 
-// Valida, ordena (número, depois Regular antes de Foil) e grava o banco
+// Valida, ordena (número, depois Regular, Reverse Foil e Foil) e grava o banco
 export function gravarBanco(cartas: CartaBanco[], colecao: string, origem: string): void {
   const ids = new Set<string>();
   for (const c of cartas) {
     if (ids.has(c.id)) throw new Error(`id repetido: ${c.id}; banco atual mantido`);
     ids.add(c.id);
   }
-  cartas.sort((a, b) => a.numero.localeCompare(b.numero, 'pt-BR', { numeric: true }) || (a.tipo === 'Regular' ? -1 : 1));
+  cartas.sort((a, b) => a.numero.localeCompare(b.numero, 'pt-BR', { numeric: true }) || ORDEM_TIPO[a.tipo] - ORDEM_TIPO[b.tipo]);
 
   const conteudo = [
     `// Banco de cartas Pokémon - importado de ${origem}`,

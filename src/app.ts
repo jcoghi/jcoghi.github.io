@@ -9,7 +9,9 @@ interface Carta {
   nomeEN: string;
   tipo: TipoCarta;
   raridade: string;
-  preco: number | null;
+  preco: number | null;      // preço em uso: o digitado à mão, se houver, ou o do arquivo
+  precoBanco: number | null; // preço de dados/cartas.js
+  manual: boolean;           // preço digitado à mão neste navegador
   busca: string; // nomes, número, código e raridade normalizados, para a busca
 }
 
@@ -19,6 +21,7 @@ const estado = {
   porId: new Map<string, Carta>(),
   filtradas: [] as Carta[],
   limite: POR_PAGINA,
+  servidor: false, // aberto pelo servidor local (npm run site): preços editados vão para dados/cartas.js
 };
 
 function $<T extends HTMLElement>(seletor: string): T {
@@ -46,6 +49,9 @@ const el = {
 const moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 const ordemNome = new Intl.Collator('pt-BR');
 const ordemCodigo = new Intl.Collator('pt-BR', { numeric: true });
+// Versões de uma mesma carta: Regular, Reverse Foil e Foil
+const ORDEM_TIPO: Record<TipoCarta, number> = { 'Regular': 0, 'Reverse Foil': 1, 'Foil': 2 };
+const ordemCarta = (a: Carta, b: Carta) => ordemCodigo.compare(a.numero, b.numero) || ORDEM_TIPO[a.tipo] - ORDEM_TIPO[b.tipo];
 
 // ---------- utilitários ----------
 
@@ -91,6 +97,8 @@ function prepararCarta(carta: CartaBanco): Carta {
     tipo: carta.tipo,
     raridade: carta.raridade || '',
     preco,
+    precoBanco: preco,
+    manual: false,
     busca: normalizar(`${carta.nomePT} ${carta.nomeEN} ${carta.numero} ${carta.codigo} ${carta.raridade || ''}`),
   };
 }
@@ -114,15 +122,51 @@ async function salvarQuantidade(id: string, qtd: number): Promise<void> {
   }
 }
 
+// Preço digitado à mão vale no lugar do preço do arquivo;
+// null (ou o mesmo preço do arquivo) volta a usar o preço do arquivo
+async function salvarPreco(c: Carta, preco: number | null): Promise<void> {
+  if (preco == null || preco === c.precoBanco) {
+    c.preco = c.precoBanco;
+    c.manual = false;
+    await DB.removerPreco(c.id);
+  } else {
+    c.preco = preco;
+    c.manual = true;
+    await DB.salvarPreco({ chave: c.id, preco });
+  }
+}
+
+// Servidor local (scripts/servidor.ts); no GitHub Pages ou abrindo o index.html direto, não existe
+async function detectarServidor(): Promise<boolean> {
+  try {
+    return (await fetch('api/status', { cache: 'no-store' })).ok;
+  } catch {
+    return false;
+  }
+}
+
+// Grava o preço na carta, em dados/cartas.js (null = sem preço)
+async function gravarPrecoNoArquivo(c: Carta, preco: number | null): Promise<void> {
+  const resposta = await fetch('api/preco', {
+    method: 'PUT',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ id: c.id, preco }),
+  });
+  const dados = await resposta.json().catch(() => ({}));
+  if (!resposta.ok) throw new Error(dados.erro || `erro ${resposta.status} do servidor`);
+  c.precoBanco = preco;
+  if (window.BANCO_CARTAS) window.BANCO_CARTAS.atualizadoEm = dados.atualizadoEm;
+  await salvarPreco(c, null); // o preço da carta passa a valer: descarta o guardado só no navegador
+}
+
 // Cartas e preços vêm do arquivo dados/cartas.js (gerado por scripts/importar-liga.ts);
-// as quantidades ficam no IndexedDB do navegador.
+// as quantidades e os preços digitados à mão ficam no IndexedDB do navegador.
 async function carregarDoBanco(): Promise<void> {
   const banco = window.BANCO_CARTAS;
   if (!banco || !Array.isArray(banco.cartas)) {
     throw new Error('arquivo dados/cartas.js não encontrado, com erro de digitação ou no formato antigo. Rode: npm run importar');
   }
-  estado.cartas = banco.cartas.map(prepararCarta).sort((a, b) =>
-    ordemCodigo.compare(a.numero, b.numero) || (a.tipo === 'Regular' ? -1 : 1));
+  estado.cartas = banco.cartas.map(prepararCarta).sort(ordemCarta);
   estado.porId = new Map(estado.cartas.map((c) => [c.id, c]));
 
   // Quantidades de cartas que não existem mais no banco são descartadas
@@ -132,13 +176,23 @@ async function carregarDoBanco(): Promise<void> {
     if (r.qtd && estado.porId.has(r.chave)) estado.registros.set(r.chave, { chave: r.chave, qtd: r.qtd });
     else await DB.remover(r.chave);
   }
+
+  // Preços digitados à mão de cartas que não existem mais, ou que o arquivo já traz com o mesmo valor, são descartados
+  for (const p of await DB.precosManuais()) {
+    const c = estado.porId.get(p.chave);
+    if (c && p.preco !== c.precoBanco) { c.preco = p.preco; c.manual = true; }
+    else await DB.removerPreco(p.chave);
+  }
   mostrarInfoBanco(banco);
 }
 
 function mostrarInfoBanco(banco: BancoCartas): void {
   const data = new Date(banco.atualizadoEm).toLocaleString('pt-BR');
   const comPreco = estado.cartas.filter((c) => c.preco != null).length;
-  mostrarStatus(`Coleção ${banco.colecao.toUpperCase()} · ${estado.cartas.length} entradas (${comPreco} com preço) · atualizado em ${data}`);
+  const manuais = estado.cartas.filter((c) => c.manual).length;
+  mostrarStatus(`Coleção ${banco.colecao.toUpperCase()} · ${estado.cartas.length} entradas (${comPreco} com preço) · atualizado em ${data}`
+    + (manuais ? ` · ${manuais} preço(s) digitado(s) à mão` : '')
+    + (estado.servidor ? ' · preços editados são gravados em dados/cartas.js' : ''));
 }
 
 // ---------- busca e listagem ----------
@@ -159,6 +213,15 @@ function filtrar(): void {
   renderizarResultados();
 }
 
+// Preço com o botão ✎ (editar) e, quando foi digitado à mão, ↺ (voltar ao preço do arquivo)
+function htmlPreco(c: Carta): string {
+  const banco = c.precoBanco == null ? 'sem preço' : moeda.format(c.precoBanco);
+  return `
+    ${c.manual ? `<button type="button" class="restaurar-preco" title="Voltar ao preço do banco (${banco})" aria-label="Voltar ao preço do banco">↺</button>` : ''}
+    <span class="preco${c.preco == null ? ' falta' : ''}${c.manual ? ' manual' : ''}"${c.manual ? ` title="Preço digitado à mão · no banco: ${banco}"` : ''}>${c.preco == null ? 'sem preço' : moeda.format(c.preco)}</span>
+    <button type="button" class="editar-preco" title="Editar preço" aria-label="Editar preço">✎</button>`;
+}
+
 function htmlCarta(c: Carta): string {
   const r = registro(c.id);
   const secundario = nomeSecundario(c);
@@ -169,8 +232,8 @@ function htmlCarta(c: Carta): string {
         <strong>${escapar(c.nomePT)}</strong>
         ${secundario ? `<small>${escapar(secundario)}</small>` : ''}
       </div>
-      <span class="tipo tipo-${c.tipo.toLowerCase()}">${c.tipo}</span>
-      <span class="preco${c.preco == null ? ' falta' : ''}">${c.preco == null ? 'sem preço' : moeda.format(c.preco)}</span>
+      <span class="tipo tipo-${c.tipo.toLowerCase().replace(/ /g, '-')}">${c.tipo}</span>
+      <div class="preco-celula">${htmlPreco(c)}</div>
       <div class="qtd">
         <button type="button" class="menos" aria-label="Diminuir">−</button>
         <input type="text" inputmode="numeric" class="quantidade" value="${r.qtd || ''}" placeholder="0" aria-label="Quantidade">
@@ -197,7 +260,7 @@ function renderizarPedido(): void {
     const c = estado.porId.get(r.chave);
     if (r.qtd && c) itens.push({ r, c });
   }
-  itens.sort((a, b) => ordemCodigo.compare(a.c.numero, b.c.numero) || (a.c.tipo === 'Regular' ? -1 : 1));
+  itens.sort((a, b) => ordemCarta(a.c, b.c));
 
   let total = 0;
   let semPreco = 0;
@@ -209,9 +272,10 @@ function renderizarPedido(): void {
     total += subtotal;
     return `
       <li data-id="${escapar(c.id)}">
-        <div class="item-nome">${escapar(c.nomePT)} <small>Nº ${escapar(c.numero)} · ${c.raridade ? escapar(c.raridade) : c.tipo}</small></div>
+        <div class="item-nome">${escapar(c.nomePT)} <small>Nº ${escapar(c.numero)} · ${c.tipo === 'Reverse Foil' ? c.tipo : c.raridade ? escapar(c.raridade) : c.tipo}</small></div>
         <div class="item-valores">
-          ${r.qtd} × ${c.preco == null ? '<span class="falta">sem preço</span>' : moeda.format(c.preco)}
+          ${r.qtd} × ${c.preco == null ? '<span class="falta">sem preço</span>'
+            : c.manual ? `<span class="manual" title="Preço digitado à mão">${moeda.format(c.preco)}</span>` : moeda.format(c.preco)}
           <strong>${moeda.format(subtotal)}</strong>
           <button type="button" class="remover" title="Remover do pedido" aria-label="Remover">×</button>
         </div>
@@ -235,6 +299,66 @@ async function definirQuantidade(id: string, valor: number | string, artigo?: HT
     if (input && document.activeElement !== input) input.value = qtd ? String(qtd) : '';
   }
   renderizarPedido();
+}
+
+// ---------- edição de preço ----------
+
+function celulaPreco(artigo: HTMLElement): HTMLElement {
+  return artigo.querySelector<HTMLElement>('.preco-celula')!;
+}
+
+// Novo preço da carta: gravado em dados/cartas.js (null = sem preço) ou, sem o servidor local,
+// guardado só no navegador (null = volta ao preço do arquivo)
+async function definirPreco(artigo: HTMLElement, preco: number | null, noArquivo: boolean): Promise<void> {
+  const c = estado.porId.get(artigo.dataset.id!);
+  if (!c) return;
+  try {
+    if (noArquivo) await gravarPrecoNoArquivo(c, preco);
+    else await salvarPreco(c, preco);
+  } catch (erro) {
+    console.error(erro);
+    celulaPreco(artigo).innerHTML = htmlPreco(c);
+    mostrarStatus(`Erro ao gravar o preço de ${c.nomePT} (Nº ${c.numero}): ${(erro as Error).message}`, 'erro');
+    return;
+  }
+  celulaPreco(artigo).innerHTML = htmlPreco(c);
+  renderizarPedido();
+  if (window.BANCO_CARTAS) mostrarInfoBanco(window.BANCO_CARTAS);
+}
+
+// Troca o preço da linha por um campo para digitar o novo valor
+function abrirEdicaoPreco(artigo: HTMLElement): void {
+  const c = estado.porId.get(artigo.dataset.id!);
+  if (!c) return;
+  const valor = c.preco == null ? '' : c.preco.toFixed(2).replace('.', ',');
+  const ajuda = estado.servidor
+    ? 'Enter grava na carta (dados/cartas.js) · Esc cancela · vazio = sem preço'
+    : 'Enter salva neste navegador · Esc cancela · vazio volta ao preço do banco';
+  celulaPreco(artigo).innerHTML = `
+    <input type="text" inputmode="decimal" class="preco-input" value="${valor}" placeholder="0,00"
+      aria-label="Novo preço" title="${ajuda}">`;
+  const input = celulaPreco(artigo).querySelector<HTMLInputElement>('.preco-input')!;
+  input.focus();
+  input.select();
+}
+
+// Fecha o campo de preço. Salvando, vazio = sem preço (ou volta ao preço do arquivo) e um valor inválido
+// mantém o campo aberto (retorna false); sem salvar (Esc), descarta o que foi digitado.
+function fecharEdicaoPreco(input: HTMLInputElement, salvar: boolean): boolean {
+  const artigo = input.closest<HTMLElement>('.carta');
+  const c = artigo && estado.porId.get(artigo.dataset.id!);
+  if (!artigo || !c || input.dataset.fechado) return true;
+  const texto = input.value.trim();
+  const preco = texto ? lerPreco(texto) : null;
+  if (salvar && texto && preco == null) {
+    input.classList.add('invalido');
+    return false;
+  }
+  // Trocar o HTML com o campo em foco dispara focusout no Chrome: marca para não fechar duas vezes
+  input.dataset.fechado = '1';
+  if (salvar) definirPreco(artigo, preco, estado.servidor);
+  else celulaPreco(artigo).innerHTML = htmlPreco(c);
+  return true;
 }
 
 // ---------- eventos ----------
@@ -300,6 +424,36 @@ el.resultados.addEventListener('keydown', (e) => {
   el.busca.select();
 });
 
+// Botões ✎ (editar preço) e ↺ (voltar ao preço do arquivo)
+el.resultados.addEventListener('click', (e) => {
+  const alvo = e.target as HTMLElement;
+  const artigo = cartaDoEvento(e);
+  if (!artigo) return;
+  if (alvo.matches('.editar-preco')) abrirEdicaoPreco(artigo);
+  else if (alvo.matches('.restaurar-preco')) definirPreco(artigo, null, false);
+});
+
+// No campo de preço: Enter salva e volta para a busca; Esc cancela
+el.resultados.addEventListener('keydown', (e) => {
+  const alvo = e.target as HTMLInputElement;
+  if (!alvo.matches('.preco-input')) return;
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    if (fecharEdicaoPreco(alvo, true)) { el.busca.focus(); el.busca.select(); }
+  } else if (e.key === 'Escape') {
+    e.preventDefault();
+    const artigo = cartaDoEvento(e);
+    fecharEdicaoPreco(alvo, false);
+    artigo?.querySelector<HTMLButtonElement>('.editar-preco')?.focus();
+  }
+});
+
+// Ao sair do campo de preço, salva (ou descarta, se o valor for inválido)
+el.resultados.addEventListener('focusout', (e) => {
+  const alvo = e.target as HTMLInputElement;
+  if (alvo.matches('.preco-input') && !fecharEdicaoPreco(alvo, true)) fecharEdicaoPreco(alvo, false);
+});
+
 el.pedidoLista.addEventListener('click', (e) => {
   const alvo = e.target as HTMLElement;
   if (!alvo.matches('.remover')) return;
@@ -320,6 +474,7 @@ el.zerar.addEventListener('click', async () => {
 
 (async function iniciar() {
   try {
+    estado.servidor = await detectarServidor();
     await carregarDoBanco();
     filtrar();
     renderizarPedido();

@@ -1,10 +1,10 @@
 // Tipos compartilhados entre o site (src/) e o importador (scripts/).
 
-type TipoCarta = 'Regular' | 'Foil';
+type TipoCarta = 'Regular' | 'Reverse Foil' | 'Foil';
 
-// Carta como fica gravada em dados/cartas.js (uma entrada por versão: Regular ou Foil)
+// Carta como fica gravada em dados/cartas.js (uma entrada por versão: Regular, Reverse Foil ou Foil)
 interface CartaBanco {
-  id: string;      // ex.: "dlr-090-reg" / "dlr-090-foil"
+  id: string;      // ex.: "dlr-090-reg" / "dlr-090-rev" / "dlr-090-foil"
   numero: string;  // número da carta na coleção, ex.: "090"
   codigo: string;  // ex.: "dlr-090" (igual nas duas versões)
   nomePT: string;
@@ -25,6 +25,13 @@ interface BancoCartas {
 interface Registro {
   chave: string;
   qtd: number;
+}
+
+// Preço digitado à mão no site (guardado no IndexedDB; chave = id da carta).
+// Vale só no navegador onde foi digitado, no lugar do preço de dados/cartas.js.
+interface PrecoManual {
+  chave: string;
+  preco: number;
 }
 
 interface Window {
