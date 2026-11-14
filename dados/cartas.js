@@ -2,7 +2,7 @@
 // Para ajustar um preço, edite o campo "preco": 12.5 ou "12,50" (null = sem preço).
 // Atenção: importar de novo substitui todos os preços.
 window.BANCO_CARTAS = {
-  "atualizadoEm": "2026-11-14T13:32:28.350Z",
+  "atualizadoEm": "2026-11-14T13:32:50.162Z",
   "colecao": "dlr",
   "cartas": [
     {"id":"dlr-001-reg","numero":"001","codigo":"dlr-001","nomePT":"Heracross","nomeEN":"","tipo":"Regular","preco":0.2},
@@ -185,7 +185,7 @@ window.BANCO_CARTAS = {
     {"id":"dlr-095-reg","numero":"095","codigo":"dlr-095","nomePT":"Tubo de Lava Lendário (Direita)","nomeEN":"Legendary Pyroduct (Right Half)","tipo":"Regular","preco":0.6},
     {"id":"dlr-096-reg","numero":"096","codigo":"dlr-096","nomePT":"Pico Lendário (Esquerda)","nomeEN":"Legendary Summit (Left Half)","tipo":"Regular","preco":2},
     {"id":"dlr-097-reg","numero":"097","codigo":"dlr-097","nomePT":"Pico Lendário (Direita)","nomeEN":"Legendary Summit (Right Half)","tipo":"Regular","preco":0.5},
-    {"id":"dlr-098-reg","numero":"098","codigo":"dlr-098","nomePT":"Abismo Lendário (Esquerda)","nomeEN":"","tipo":"Regular","preco":2},
+    {"id":"dlr-098-reg","numero":"098","codigo":"dlr-098","nomePT":"Abismo Lendário (Esquerda)","nomeEN":"","tipo":"Regular","preco":0.5},
     {"id":"dlr-099-reg","numero":"099","codigo":"dlr-099","nomePT":"Abismo Lendário (Direita)","nomeEN":"","tipo":"Regular","preco":2},
     {"id":"dlr-100-reg","numero":"100","codigo":"dlr-100","nomePT":"Chapéu de Mega Rayquaza","nomeEN":"","tipo":"Regular","preco":0.2},
     {"id":"dlr-100-rev","numero":"100","codigo":"dlr-100","nomePT":"Chapéu de Mega Rayquaza","nomeEN":"","tipo":"Reverse Foil","preco":1.5},
